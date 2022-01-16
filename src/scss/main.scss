@@ -1,0 +1,1219 @@
+@import "normalize.scss";
+@import "var.scss";
+@import "mixins.scss";
+
+
+// =============================== GENERAL =============================== \\
+
+body {
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-style: normal;
+  color: $main-bright-color;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $main-bright-color;
+}
+
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+
+
+
+
+// =============================== HEADER =============================== \\
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  z-index: 10000;
+  transition: all 0.2s ease-in-out;
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  background-color: $main-light-color;
+  z-index: 5;
+
+  @include respond-to("sm") {
+    position: relative;
+  }
+}
+
+.logo__link {
+  width: 20%;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  @include respond-to("md") {
+    width: 20%;
+  }
+
+  @include respond-to("sm") {
+    display: none;
+  }
+}
+
+.first__logo {
+  width: 100%;
+
+  @include respond-to("sm") {}
+}
+
+.topnav {
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  &__link {
+    margin-right: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  &__icon {
+    display: none;
+    border-bottom: none;
+  }
+
+  @include respond-to ('md') {
+
+    &__link {
+      font-size: 12px;
+      display: none;
+      padding-right: 0;
+      font-size: 16px;
+    }
+
+    &__icon {
+      font-size: 40px;
+      text-align: center;
+      display: block;
+
+    }
+
+  }
+}
+
+.responsive {
+  position: relative;
+}
+
+.responsive .topnav__link {
+  float: none;
+  display: block;
+  text-align: center;
+}
+
+.responsive .topnav__link:hover {
+  text-decoration: underline;
+}
+
+.button {
+  margin-top: auto;
+  margin-bottom: auto;
+
+  &__link {
+    font-size: 16px;
+    font-weight: bold;
+    background: url(../img/phone.png) no-repeat center left;
+    padding-left: 25px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+}
+
+/* First Section */
+
+.first {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  background-color: $main-first-color;
+  opacity: 1;
+
+  &__background {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  left: 0;
+
+  @include respond-to("sm") {
+    &__buttons {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: $main-title-color;
+    line-height: 1.47;
+    padding-bottom: 6%;
+    padding-top: 6%;
+  }
+
+  &__quote {
+    text-align: center;
+    font-size: 26px;
+    color: $main-title-color;
+    font-weight: bold;
+    width: 73%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 6%;
+
+    @include respond-to("sm") {
+      font-size: 20px;
+      width: 90%;
+    }
+  }
+
+  &__author {
+    text-align: center;
+    font-size: 28px;
+    color: $main-title-color;
+    padding-bottom: 75px;
+    font-style: italic;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+
+  }
+}
+
+.btn {
+  background-color: $main-light-color;
+  color: $btn-text-color;
+  width: 250px;
+  border-radius: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+  @include respond-to("sm") {
+    margin: 0 auto 5%;
+    width: 63%;
+
+  }
+
+  &:hover {
+    background-color: $link-hover-color;
+    color: $main-light-color;
+  }
+}
+
+
+/*=================================== ABOUT ME =========================== */
+
+.second {
+  padding: 3%;
+}
+
+.about {
+  &__img {
+    float: right;
+    width: 30%;
+  }
+
+  &__list {
+    text-decoration-line: underline;
+    display: inline;
+    padding-right: 6px;
+  }
+
+  &__content {
+    width: 60%;
+    padding-top: 5%;
+  }
+
+  &__title {
+    font-size: 32px;
+    text-align: left;
+    font-weight: bold;
+
+    @include respond-to("sm") {
+      font-size: 30px;
+
+    }
+  }
+
+  &__title::after {
+    display: block;
+    content: "";
+    width: 96px;
+    border-bottom: 3px solid $main-light-color;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__title-small {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  &__text {
+    text-align: justify;
+    padding-bottom: 15px;
+    font-size: 16px;
+  }
+
+  &__name {
+    background: url(../img/libra.png) no-repeat center top;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  &__link {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 22px;
+    color: #4f4b47;
+    font-weight: bold;
+    border-bottom: 1px solid $main-bright-color;
+    color: $main-bright-color;
+    margin-bottom: 1%;
+    display: block;
+    padding-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__link:hover {
+    color: #EBC6B6;
+    border-bottom: 1px solid $link-hover-color;
+  }
+
+  &__sign {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__item {
+    padding-bottom: 1%;
+    padding-left: 2%;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1000;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+
+  /* Modal Content/Box */
+  &__content {
+    color: #6e6565;
+    font-size: 16px;
+    background-color: #fefefe;
+    margin: 7% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    max-width: 1024px;
+  }
+
+  &__content p {
+    margin-bottom: 30px;
+    max-width: 1060px;
+    text-align: justify;
+  }
+
+  &__content a {
+    color: #4f4b47;
+    border-bottom: 2px solid $link-hover-color;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*--=================================== SERVICES =========================== */
+.third {
+  background-color: $main-light-color;
+  padding-top: 30px;
+  padding-bottom: 65px;
+}
+
+.offer {
+  background: url(./images/services.png) no-repeat center center;
+  background-position-y: 10px;
+
+  @include respond-to ('md') {
+    padding: 0 30px;
+
+    &__title {
+      padding-bottom: 0px;
+    }
+
+    &__text {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 48px;
+    padding-top: 55px;
+    text-align: center;
+  }
+
+  &__title::after {
+    display: block;
+    text-align: center;
+    content: "";
+    width: 96px;
+    border-bottom: 3px solid $main-btn-color;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
+
+  &__text {
+    max-width: 917px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    padding-top: 10px;
+  }
+}
+
+.detail {
+  display: flex;
+  justify-content: space-around;
+  padding: 5% 2%;
+  text-align: center;
+
+  &__list {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  @include respond-to ('lg') {
+
+    &__title {
+      font-size: 18px;
+      padding-bottom: 15px;
+      padding-left: 0px;
+      font-weight: bold;
+    }
+
+    &__text {
+      font-size: 16px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    &__list {
+      width: 30%;
+    }
+
+    &__item {
+      height: 210px;
+    }
+  }
+
+  @include respond-to ('md') {
+    padding: 0px 30px;
+    flex-direction: column;
+
+    &__list {
+      width: 100%;
+    }
+
+    &__item {
+      height: 100%;
+    }
+  }
+
+  @include respond-to ('sm') {
+    &__center-img {
+      width: 100%;
+    }
+  }
+}
+
+/*
+.circle {
+  background: url(../img/psy.png) no-repeat top left;
+  background-size: 5%;
+  background-position-x: 13%;
+
+  @include respond-to ('md') {
+    background: none;
+    background-size: 15%;
+  }
+
+  @include respond-to ('lg') {
+    background: none;
+  }
+} */
+/*
+.man {
+  background: url(../img/man.png) no-repeat top left;
+  background-size: 6%;
+  background-position-x: 13%;
+
+  @include respond-to ('md') {
+    background: none;
+  }
+
+  @include respond-to ('lg') {
+    background: none;
+  }
+
+} */
+/*
+.heart {
+  background: url(../img/rings.png) no-repeat top left;
+  background-size: 6%;
+  background-position-x: 5%;
+
+  @include respond-to ('md') {
+    background: none;
+  }
+
+  @include respond-to ('lg') {
+    background: none;
+  }
+} */
+/*
+.rings {
+  background: url(../img/heart.png) no-repeat top left;
+  background-size: 6%;
+  background-position-x: 4%;
+
+  @include respond-to ('md') {
+    background: none;
+  }
+
+  @include respond-to ('lg') {
+    background: none;
+  }
+
+} */
+
+.number__link {
+
+  background-color: #504b47;
+  color: #fcf7f1;
+  background-repeat: no-repeat;
+  display: block;
+
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+
+  @include respond-to ('md') {
+    width: 36%;
+  }
+
+  @include respond-to ('sm') {
+    width: 84%;
+  }
+}
+
+.number__link:hover {
+  color: #EBC6B6;
+  background-color: $btn-text-color;
+
+}
+
+.questions {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  &__title {
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 82%;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    line-height: 1.50;
+    text-indent: 30px;
+  }
+
+  &__title::after {
+    display: block;
+    text-align: center;
+    content: "";
+    width: 96px;
+    border-bottom: 3px solid $main-btn-color;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
+}
+
+.methods {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+
+  @include respond-to ("sm") {
+    &__text {
+      text-align: left;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.collapsible {
+  color: #6f6f6f;
+  cursor: pointer;
+  border-color: transparent;
+  border-bottom: 1px solid $main-btn-color;
+  text-align: left;
+  outline: none;
+  font-size: 26px;
+  line-height: 1.4;
+  background: $main-title-color;
+}
+
+.content {
+  background-color: $main-title-color;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.r {
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5;
+  margin-block-start: 0px;
+}
+
+.mother {
+  float: left;
+  width: 25%;
+  margin-right: 20px;
+}
+
+.kiss {
+  float: right;
+  width: 20%;
+  margin-left: 20px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  color: $main-btn-color;
+}
+
+.money {
+  background: $main-light-color;
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  &__title {
+    padding-bottom: 48px;
+    text-align: center;
+  }
+
+  &__title::after {
+    display: block;
+    text-align: center;
+    content: "";
+    width: 96px;
+    border-bottom: 3px solid $main-btn-color;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
+
+  &__text {
+    color: #504B47;
+    font-size: 18px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  @include respond-to("md") {
+    &__text {
+      font-size: 14px;
+    }
+  }
+}
+
+.prices {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+
+  @include respond-to("sm") {
+    flex-direction: column;
+  }
+
+  &__title {
+    padding-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &__cost {
+    padding-top: 70px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Roboto;
+  }
+
+  &__cost span {
+    font-size: 18px;
+  }
+
+  &__time {
+    font-size: 18px;
+    font-family: Roboto;
+  }
+}
+
+.container {
+  position: relative;
+  width: 25%;
+  padding-bottom: 50px;
+
+  @include respond-to ("sm") {
+    width: 100%;
+  }
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: $main-title-color;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+
+  &__text {
+    padding-top: 20px;
+
+  }
+
+  &__text::after {
+    display: block;
+    text-align: center;
+    content: "";
+    width: 96px;
+    border-bottom: 3px solid $main-btn-color;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+  }
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.long {
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond-to("md") {
+    width: 80%;
+  }
+}
+
+.btn__smaller {
+  background-color: $main-btn-color;
+  color: #fff;
+  margin-left: 0px;
+  margin-right: 0px;
+  max-width: 170px;
+  height: 66px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 14%;
+  border: none;
+}
+
+.btn__smaller:hover {
+  background-color: $main-btn-color;
+  color: $btn-text-color;
+}
+
+/* section Schedule */
+.schedule {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.appointment {
+  &__title {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__text {
+    max-width: 800px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
+
+  &__title::after {
+    display: block;
+    text-align: center;
+    content: "";
+    width: 96px;
+    border-bottom: 3px solid $main-btn-color;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
+
+  @include respond-to ('md') {
+    &__text {
+      padding-left: 20px;
+      padding-right: 30px;
+    }
+  }
+}
+
+.check {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond-to ('sm') {
+    flex-direction: column;
+  }
+}
+
+.check input,
+.check textarea {
+  display: block;
+  border: none;
+  border-bottom: 2px solid $main-btn-color;
+  padding: 10px;
+  font-size: 18px;
+  color: #b2afae;
+  width: 350px;
+  margin-bottom: 20px;
+
+  @include respond-to("sm") {
+    width: 90%;
+  }
+}
+
+input[type=text]:focus,
+input[type=date]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
+input[type=time]:focus {
+  background-color: $main-btn-color;
+  outline: none;
+}
+
+.check textarea {
+  width: 85%;
+
+  @include respond-to("sm") {
+    width: 80%;
+  }
+}
+
+.check__btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  margin-top: 25px;
+}
+
+.check__btn:hover {
+  color: #EBC6B6;
+  background-color: $btn-text-color;
+}
+
+.message {
+  border: none;
+  outline: none;
+}
+
+.call {
+  padding: 5% 2%;
+
+  @include respond-to ("sm") {
+    &__block {
+      width: 100%;
+    }
+  }
+
+  &__block {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__btn {
+    color: #504b47;
+    font-size: 35px;
+    font-weight: 700;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 2%;
+
+    /*  background: url(../img/phone.png) no-repeat bottom left; */
+    display: inline-block;
+    /*  background-position-y: 44px;
+    background-position-x: 0px; */
+
+    &__btn:hover {
+      text-decoration: underline;
+    }
+
+    &__img {
+      display: inline-block;
+    }
+
+    @include respond-to ('md') {
+      background-position-y: 30px;
+    }
+  }
+}
+
+footer {
+  background: #504B47;
+  color: $main-title-color;
+  font-size: 18px;
+
+  @include respond-to ('md') {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+
+}
+
+.footer {
+  padding: 20px;
+
+  @include respond-to ('md') {
+    padding: 10px;
+  }
+
+  @include respond-to ('sm') {
+    padding: 10px 5px;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond-to ("sm") {
+    flex-direction: column;
+  }
+}
+
+.white {
+  color: $main-title-color;
+}
+
+.white:hover {
+  text-decoration: underline;
+}
+
+.white:hover {
+  color: $main-title-color;
+}
+
+.top__img img {
+  width: 100%;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+
+  &__map {
+    padding-top: 2%;
+  }
+
+  @include respond-to("sm") {
+    flex-direction: column;
+
+    &__social {
+      margin-bottom: 5%;
+    }
+  }
+
+  &__text {
+    padding-bottom: 10px;
+  }
+
+  &__hours {
+    padding-left: 78px;
+  }
+
+  &__copyright {
+    font-size: 14px;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  &__social a {
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+
+  @include respond-to ('md') {
+    &__hours {
+      padding-left: 0px;
+    }
+  }
+}
+
+.street {
+  background: url(../img/map.png) no-repeat top left;
+  background-position-y: 7px;
+  padding-left: 30px;
+}
+
+.ring {
+  background: url(../img/contacts.png) no-repeat center left;
+  background-position-y: -47px;
+  padding-left: 30px;
+}
+
+.envelope {
+  background: url(../img/contacts.png) no-repeat center left;
+  background-position-y: -98px;
+  padding-left: 30px;
+}
+
+
+#myBtn1 {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 10px;
+  /* Place the button at the bottom of the page */
+  right: 10px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: #fbf7f2;
+  color: $main-title-color;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding-top: 48px;
+  padding-right: 48px;
+}
+
+#myBtn1:after {
+  color: #5a5a5ab8;
+  content: '\f106';
+  font-size: 29px;
+  font-family: 'FontAwesome';
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+#myBtn1:hover {
+  background-color: #6e6565;
+  /* Add a dark-grey background on hover */
+}
+
+.main-title-block {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $main-bright-color;
+
+  &__title {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: 4px;
+  }
+
+  &__description {
+    margin-top: 20px;
+    font-size: 18px;
+    letter-spacing: 5.4px;
+  }
+
+  @include respond-to("xl") {
+    &__title {
+      font-size: 70px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+  }
+
+  @include respond-to("lg") {
+    padding-top: 50px;
+
+    &__title {
+      font-size: 50px;
+    }
+
+    &__description {
+      font-size: 13px;
+    }
+  }
+
+  @include respond-to("sm") {
+    &__title {
+      font-size: 35px;
+    }
+
+    &__description {
+      font-size: 11px;
+    }
+  }
+}
+
+// =============================== MAP =============================== \\
+
+#map {
+  position: relative;
+  width: 100%;
+  height: 700px;
+}
